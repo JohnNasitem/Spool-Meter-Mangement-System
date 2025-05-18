@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spool_Meter_Viewer.BluetoothPage"
+             Title="Connect To A Spool Meter"
+             BackgroundColor="White">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label
+                TextColor="Black"
+                Text="Spool Meters"
+                FontSize="20"
+                VerticalOptions="End"
+                HorizontalOptions="Center"/>
+            <Frame
+                BackgroundColor="White"
+                x:Name="BleItemsFrame"
+                Padding="0"
+                Margin="10, 5"
+                CornerRadius="7">
+                <CollectionView 
+                    ItemsSource="{Binding Items}"
+                    SelectionMode="Single"
+                    SelectionChanged="CollectionView_SelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Name}" FontSize="18" TextColor="Black"/>
+
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup Name="CommonStates">
+                                        <VisualState Name="Normal"></VisualState>
+                                        <VisualState Name="Selected">
+                                            <VisualState.Setters>
+                                                <Setter Property="BackgroundColor" Value="#D1C4E9"></Setter>
+                                            </VisualState.Setters>
+                                        </VisualState>
+
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Frame>
+            <Button 
+                TextColor="White"
+                BackgroundColor="#512BD4"
+                x:Name="SelectSpoolMeterButton"
+                Text="Select Spool Meter"
+                Clicked="SelectSpoolMeterButton_Clicked"
+                IsEnabled="False"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                CornerRadius="7"
+                Margin="10, 5"/>
+            <Label
+                 TextColor="Black"
+                 x:Name="StatusLabel"
+                 Text="Status"
+                 Margin="15,20,0,0"
+                 IsVisible="False"
+                 HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

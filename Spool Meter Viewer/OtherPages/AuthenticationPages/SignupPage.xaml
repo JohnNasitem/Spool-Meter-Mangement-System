@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spool_Meter_Viewer.SignupPage"
+             Title="Sign Up Page"
+             BackgroundColor="White">
+    <VerticalStackLayout
+        VerticalOptions="Center">
+        <Label 
+             TextColor="Black"
+             Text="Sign up!"
+             FontSize="20"
+             VerticalOptions="Center" 
+             HorizontalOptions="Center" />
+        <Label 
+             TextColor="Black"
+             Text="Email"
+             Margin="15,20,0,0"
+             HorizontalOptions="Start" />
+        <Frame
+             CornerRadius="15"
+             BackgroundColor="#E0E0E0"
+             Padding="5"
+             HasShadow="False"
+             HeightRequest="50"
+             HorizontalOptions="Fill"
+             Margin="10,0"
+             VerticalOptions="Center">
+                <Entry
+                     x:Name="SignupEmail"
+                     TextColor="Black"/>
+        </Frame>
+        <Label 
+             TextColor="Black"
+             Text="Password"
+             Margin="15,20,0,0"
+             HorizontalOptions="Start" />
+        <Frame
+             CornerRadius="15"
+             BackgroundColor="#E0E0E0"
+             Padding="5"
+             HasShadow="False"
+             HeightRequest="50"
+             HorizontalOptions="Fill"
+             Margin="10,0"
+             VerticalOptions="Center">
+            <Entry
+                     x:Name="SignupPassword"
+                     IsPassword="True"
+                     TextColor="Black"/>
+        </Frame>
+        <Label 
+             TextColor="Black"
+             Text="Confirm Password"
+             Margin="15,20,0,0"
+             HorizontalOptions="Start" />
+        <Frame
+             CornerRadius="15"
+             BackgroundColor="#E0E0E0"
+             Padding="5"
+             HasShadow="False"
+             HeightRequest="50"
+             HorizontalOptions="Fill"
+             Margin="10,0"
+             VerticalOptions="Center">
+                    <Entry
+                     x:Name="SignupConfirmPassword"
+                     IsPassword="True"
+                     TextColor="Black"/>
+        </Frame>
+        <Button
+             TextColor="White"
+             BackgroundColor="#512BD4"
+             x:Name="SignupButton"
+             CornerRadius="15"
+             HeightRequest="45"
+             HorizontalOptions="Fill"
+             Margin="10,30,10,0"
+             Text="Sign Up"
+             Clicked="SignupButton_Clicked"/>
+        <Label 
+            Text="Already have an account?"
+            TextColor="Blue"
+            HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AlreadyHaveAccountClick"/>
+                </Label.GestureRecognizers>
+        </Label>
+        <Label
+            TextColor="Black"
+             x:Name="StatusLabel"
+             Text="Status"
+             Margin="15,20,0,0"
+             HorizontalOptions="Center" />
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+    </VerticalStackLayout>
+</ContentPage>

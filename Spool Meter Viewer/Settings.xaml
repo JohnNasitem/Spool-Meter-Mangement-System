@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spool_Meter_Viewer.Settings"
+             Title="Settings"
+             BackgroundColor="White">
+    <StackLayout>
+        <Frame 
+            BackgroundColor="White"
+            BorderColor="White"
+            Padding="5"
+            CornerRadius="0">
+                    <Label 
+                        Text="Account Settings" 
+                        HorizontalOptions="Start" 
+                        TextColor="Black"
+                        FontSize="17"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="AccountSettings_Tapped"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <BoxView
+            HeightRequest="1" 
+            Color="#d3d3d3"
+            HorizontalOptions="FillAndExpand"
+            Margin="5, 0"/>
+        <Frame 
+            BackgroundColor="White"
+            BorderColor="White"
+            Padding="5"
+            CornerRadius="0">
+            <Label 
+                Text="Notification Settings" 
+                HorizontalOptions="Start" 
+                TextColor="Black"
+                FontSize="17"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="NotificationSettings_Tapped"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+    </StackLayout>
+</ContentPage>

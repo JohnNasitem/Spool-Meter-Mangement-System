@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spool_Meter_Viewer.LoginPage"
+             Title="LoginPage"
+             BackgroundColor="White">
+    <VerticalStackLayout
+        VerticalOptions="Center">
+        <Label 
+            TextColor="Black"
+            Text="Log In!"
+            FontSize="20"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+            TextColor="Black"
+            Text="Email"
+            Margin="15,20,0,0"
+            HorizontalOptions="Start" />
+        <Frame
+            CornerRadius="15"
+            BackgroundColor="#E0E0E0"
+            Padding="5"
+            HasShadow="False"
+            HeightRequest="50"
+            HorizontalOptions="Fill"
+            Margin="10,0"
+            VerticalOptions="Center">
+            <Entry
+                x:Name="LoginEmail"
+                TextColor="Black"/>
+        </Frame>
+        <Label 
+            TextColor="Black"
+            Text="Password"
+            Margin="15,20,0,0"
+            HorizontalOptions="Start" />
+        <Frame
+            CornerRadius="15"
+            BackgroundColor="#E0E0E0"
+            Padding="5"
+            HasShadow="False"
+            HeightRequest="50"
+            HorizontalOptions="Fill"
+            Margin="10,0"
+            VerticalOptions="Center">
+                <Entry
+                    x:Name="LoginPassword"
+                    IsPassword="True"
+                    TextColor="Black"/>
+        </Frame>
+        <Button
+            TextColor="White"
+            BackgroundColor="#512BD4"
+            x:Name="LoginButton"
+            CornerRadius="15"
+            HeightRequest="45"
+            HorizontalOptions="Fill"
+            Margin="10,30,10,0"
+            Text="Log in"
+            Clicked="LoginButton_Clicked"
+            />
+        <Label Text="Dont have an account?"
+           TextColor="Blue"
+           HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="DontHaveAccountClick"/>
+                </Label.GestureRecognizers>
+        </Label>
+        <Label 
+           Text="Forgot Password"
+           TextColor="Blue"
+           HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ForgotPasswordClick"/>
+                    </Label.GestureRecognizers>
+        </Label>
+        <Label
+             TextColor="Black"
+             x:Name="StatusLabel"
+             Text="Status"
+             Margin="15,20,0,0"
+             HorizontalOptions="Center" />
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+    </VerticalStackLayout>
+
+</ContentPage>

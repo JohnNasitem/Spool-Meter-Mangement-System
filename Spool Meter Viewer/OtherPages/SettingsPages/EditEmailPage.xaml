@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spool_Meter_Viewer.OtherPages.SettingsPages.EditEmailPage"
+             Title="Edit Email"
+             BackgroundColor="White">
+    <VerticalStackLayout>
+        <Grid
+        RowDefinitions="auto, auto, auto"
+        ColumnDefinitions="Auto,*"
+        ColumnSpacing="10"
+        Margin="10">
+            <Label
+                TextColor="Black"
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="Old Email"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"/>
+            <Entry
+                TextColor="Black"
+                Grid.Row="0"
+                Grid.Column="1"
+                x:Name="OldEmailEntry"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                IsReadOnly="True"/>
+            <Label
+                TextColor="Black"
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="New Email"
+                HorizontalOptions="Start"
+                VerticalOptions="Center"/>
+            <Entry
+                TextColor="Black"
+                Grid.Row="1"
+                Grid.Column="1"
+                x:Name="NewEmailEntry"
+                Placeholder="New email"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                TextChanged="NewEmailEntry_TextChanged"/>
+            <Button
+                TextColor="White"
+                BackgroundColor="#512BD4"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Text="Update Email"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center"
+                x:Name="UpdateEmailButton"
+                Pressed="UpdateEmailButton_Pressed"
+                IsEnabled="False"/>
+        </Grid>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+    </VerticalStackLayout>
+</ContentPage>

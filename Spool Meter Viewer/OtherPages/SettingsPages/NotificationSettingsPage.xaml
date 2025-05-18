@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spool_Meter_Viewer.OtherPages.SettingsPages.NotificationSettingsPage"
+             Title="Notification Settings"
+             BackgroundColor="White">
+    <VerticalStackLayout
+        Margin="10"
+        Spacing="5"
+        x:Name="NotificationSettingsContainer">
+        <ContentView>
+            <Grid
+                ColumnDefinitions="*,auto"
+                ColumnSpacing="10">
+                <Label
+                    TextColor="Black"
+                    Grid.Column="0"
+                    Text="Push Notifications"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    FontSize="17"
+                    FontAttributes="Bold"/>
+                <Switch
+                    Grid.Column="1"
+                    x:Name="AllPushNotifications"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    HeightRequest="20"
+                    Toggled="AllPushNotifications_Toggled"/>
+            </Grid>
+        </ContentView>
+        <ContentView>
+            <Grid
+                ColumnDefinitions="*,auto"
+                ColumnSpacing="10">
+                <Label
+                    TextColor="Black"
+                    Grid.Column="0"
+                    Text="Spool Meter Battery Low"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    FontSize="15"
+                    Padding="10, 0, 0, 0"/> 
+                <Switch
+                    Grid.Column="1"
+                    x:Name="SpoolMeterBatteryLow"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    HeightRequest="20"
+                    Toggled="SpoolMeterBatteryLow_Toggled"/>
+            </Grid>
+        </ContentView>
+        <ContentView>
+            <Grid
+                ColumnDefinitions="*,auto"
+                ColumnSpacing="10">
+                <Label
+                    TextColor="Black"
+                    Grid.Column="0"
+                    Text="Spool Meter Died"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    FontSize="15"
+                    Padding="10, 0, 0, 0"/>
+                <Switch
+                    Grid.Column="1"
+                    x:Name="SpoolMeterDied"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    HeightRequest="20"
+                    Toggled="SpoolMeterDied_Toggled"/>
+            </Grid>
+        </ContentView>
+        <ContentView>
+            <Grid
+            ColumnDefinitions="*,auto"
+            ColumnSpacing="10">
+                <Label
+                    TextColor="Black"
+                    Grid.Column="0"
+                    Text="Material Low"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    FontSize="15"
+                    Padding="10, 0, 0, 0"/>
+                <Switch
+                    Grid.Column="1"
+                    x:Name="MaterialLow"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    HeightRequest="20"
+                    Toggled="MaterialLow_Toggled"/>  
+            </Grid>
+        </ContentView>
+        <ContentView>
+            <Grid
+                ColumnDefinitions="*,auto"
+                ColumnSpacing="10">
+                <Label
+                    TextColor="Black"
+                    Grid.Column="0"
+                    Text="Material Ran Out"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    FontSize="15"
+                    Padding="10, 0, 0, 0"/>
+                <Switch
+                    Grid.Column="1"
+                    x:Name="MaterialRanOut"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    HeightRequest="20"
+                    Toggled="MaterialRanOut_Toggled"/>
+            </Grid>
+        </ContentView>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+    </VerticalStackLayout>
+</ContentPage>

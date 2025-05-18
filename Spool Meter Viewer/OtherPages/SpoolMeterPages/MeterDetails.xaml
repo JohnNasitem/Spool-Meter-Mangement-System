@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spool_Meter_Viewer.MeterDetails"
+             Title="Spool Meter Details"
+             BackgroundColor="White">
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto, Auto"
+          ColumnDefinitions="Auto,*,auto"
+          ColumnSpacing="10"
+          Margin="10"
+          x:Name="MeterDetailsContainer">
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            x:Name="MeterNamePrompt"
+            Text="Spool Meter Name:"
+            HorizontalOptions="Start"
+            TextColor="Black"
+            VerticalOptions="Center"/>
+        <Entry
+            TextColor="Black"
+            Grid.Row="0"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            x:Name="MeterNameEntry"
+            Placeholder="Enter Spool Meter Name"
+            HorizontalOptions="Fill"
+            VerticalOptions="Center"
+            Unfocused="MeterNameEntry_Unfocused"
+            TextChanged="TextChange"/>
+        <Label
+            TextColor="Black"
+            Grid.Row="1"
+            Grid.Column="0"
+            x:Name="MaterialTypePrompt"
+            Text="Material Type:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"/>
+        <Picker 
+            TextColor="Black"
+            Grid.Row="1"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            x:Name="MaterialTypePicker"
+            HorizontalOptions="Fill"
+            VerticalOptions="Center"
+            SelectedIndexChanged="MaterialTypePicker_SelectedIndexChanged"/>
+        <Label
+            TextColor="Black"
+            Grid.Row="2"
+            Grid.Column="0"
+            x:Name="OriginalAmountPrompt"
+            Text="Original Amount:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"/>
+        <Entry 
+            TextColor="Black"
+            Grid.Row="2"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            x:Name="OriginalAmountEntry"
+            Placeholder="Enter Orginal Amount"
+            HorizontalOptions="Fill"
+            VerticalOptions="Center"
+            Unfocused="OriginalAmountEntry_Unfocused"
+            TextChanged="TextChange"/>
+        <Label
+            TextColor="Black"
+            Grid.Row="3"
+            Grid.Column="0"
+            x:Name="RemaingAmountPrompt"
+            Text="Remaining Amount:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"/>
+        <Entry 
+            TextColor="Black"
+            Grid.Row="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            x:Name="RemainingAmountEntry"
+            Placeholder="Enter Remaining Amount"
+            HorizontalOptions="Fill"
+            VerticalOptions="Center"
+            Unfocused="RemainingAmountEntry_Unfocused"
+            TextChanged="TextChange"/>
+        <Label
+            TextColor="Black"
+            Grid.Row="4"
+            Grid.Column="0"
+            x:Name="ColourPrompt"
+            Text="Color:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"/>
+        <Entry 
+            TextColor="Black"
+            Grid.Row="4"
+            Grid.Column="1"
+            x:Name="ColourEntry"
+            Placeholder="Enter colour hex code"
+            HorizontalOptions="Fill"
+            VerticalOptions="Center"
+            Unfocused="ColourEntry_Unfocused"
+            TextChanged="TextChange"/>
+        <Border
+            Grid.Row="4"
+            Grid.Column="2"
+            Padding="0"
+            Margin="0"
+            StrokeThickness="1"
+            Stroke="Black"
+            >
+            <Label
+                x:Name="ColourPreview"
+                Text="              "
+                BackgroundColor="Black"
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"/>
+        </Border>
+        <Button 
+            TextColor="White"
+            BackgroundColor="#512BD4"
+            Grid.Row="5"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Margin="0, 5, 0, 0"
+            x:Name="SaveChangesButton"
+            Text="Save Changes"
+            Clicked="SaveChanges_Clicked"
+            HorizontalOptions="Fill"
+            VerticalOptions="Center"/>
+        <Button 
+            Grid.Row="6"
+            Grid.Column="0"
+            Grid.ColumnSpan="3"
+            Margin="0, 5, 0, 0"
+            x:Name="RemoveMeterButton"
+            Text="Remove Spool Meter"
+            BackgroundColor="Red"
+            Clicked="RemoveMeterButton_Clicked"
+            HorizontalOptions="Fill"
+            VerticalOptions="Center"/>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+    </Grid>
+</ContentPage>

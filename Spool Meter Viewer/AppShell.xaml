@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Spool_Meter_Viewer.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Spool_Meter_Viewer"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.TabBarForegroundColor="#512BD4"
+    Shell.TabBarTitleColor="#512BD4"
+    Shell.TabBarUnselectedColor="Black"
+    Shell.TabBarBackgroundColor="White"
+    Shell.BackgroundColor="#512BD4"
+    Shell.TitleColor="White"
+    Title="Spool_Meter_Viewer">
+
+    <TabBar>
+        <ShellContent
+            Title="Spool Meters"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="SpoolMeter"
+            Icon="spool.png"/>
+        <ShellContent
+            Title="Usage Graphs"
+            ContentTemplate="{DataTemplate local:UsageGraphs}"
+            Route="UsageGraphs"
+            Icon="chart.png"/>
+        <ShellContent
+            Title="Settings"
+            ContentTemplate="{DataTemplate local:Settings}"
+            Route="Settings"
+            Icon="settings.png"/>
+    </TabBar>
+</Shell>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spool_Meter_Viewer.OtherPages.SettingsPages.AccountSettingsPage"
+             Title="Account Settings"
+             BackgroundColor="White">
+    <VerticalStackLayout>
+        <ContentView
+            Margin="10">
+            <Grid
+                ColumnDefinitions="Auto,*,auto"
+                ColumnSpacing="10">
+                <Label
+                    TextColor="Black"
+                    Grid.Column="0"
+                    Text="Email"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"/>
+                <Label
+                    Grid.Column="1"
+                    x:Name="EmailText"
+                    TextColor="#A9A9A9"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"/>
+                <ImageButton
+                    Grid.Column="2"
+                    Source="edit.png"
+                    Aspect="AspectFit"
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    x:Name="EditEmailButton"
+                    Pressed="EditEmailButton_Pressed"/>
+            </Grid>
+        </ContentView>
+        <ContentView
+            Margin="10">
+            <Grid
+                ColumnDefinitions="Auto,*,auto"
+                ColumnSpacing="10">
+                <Label
+                    TextColor="Black"
+                    Grid.Column="0"
+                    Text="Password"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"/>
+                <Label
+                    Grid.Column="1"
+                    x:Name="PasswordText"
+                    TextColor="#A9A9A9"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="Center"/>
+                <ImageButton
+                    Grid.Column="2"
+                    Source="edit.png"
+                    Aspect="AspectFit"
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    x:Name="EditPasswordButton"
+                    Pressed="EditPasswordButton_Pressed"/>
+                    </Grid>
+        </ContentView>
+        <Button
+            BackgroundColor="#512BD4"
+            Margin="10, 5"
+            Text="Log Out"
+            x:Name="LogOutButton"
+            TextColor="White"
+            FontAttributes="Bold"
+            Pressed="LogOutButton_Pressed"/>
+        <Button
+            Margin="10, 5"
+            Text="Delete Account"
+            x:Name="DeleteAccountButton"
+            BackgroundColor="Red"
+            TextColor="White"
+            FontAttributes="Bold"
+            Pressed="DeleteAccountButton_Pressed"/>
+    </VerticalStackLayout>
+</ContentPage>
